@@ -1,0 +1,12 @@
+{
+    "version": "2",
+    "httpMethod": "POST",
+    "path": "/",
+    "headers": {
+      "content-type": "application/json",
+      "Authorization":"Bearer eyJraWQiOiJrdWNBZGstQUVDZjBwd2NtRTNtVjV5eFlRU0x2dVhMc1FkQld4ZWlfMzNJIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULklyaFRhS2N2bXRtSTN3Z0VIWTI3OXhDdWtGOUFqc3BsTDZQaTRqV0xCM1UiLCJpc3MiOiJodHRwczovL25pa2UtcWEub2t0YXByZXZpZXcuY29tL29hdXRoMi9hdXNhMG1jb3JucFpMaTBDNDBoNyIsImF1ZCI6Imh0dHBzOi8vbmlrZS1xYS5va3RhcHJldmlldy5jb20iLCJpYXQiOjE2NzQyNTAwNzksImV4cCI6MTY3NDI1MzY3OSwiY2lkIjoibmlrZS5uaWtldGVjaC50b2tlbi1nZW5lcmF0b3IiLCJ1aWQiOiIwMHUxZjBjejZieXpkYXJpYzBoOCIsInNjcCI6WyJlbWFpbCIsIm9wZW5pZCIsInByb2ZpbGUiXSwiYXV0aF90aW1lIjoxNjc0MjUwMDc1LCJzdWIiOiJTdWJyYWhtYW55YW0uUGFtcGFuYUBuaWtlLmNvbSJ9.AO8tf7Ej7R37dK6B_r2-kvPDve_IsRexgltFZgvMYtgjEHYkarchVkfg6nMs6hnOMAN1NMByKHuEI6dQ5Uzmo45PazgSV0cz91H_yQEJjrC7f2EhJAYqLJ1Nyq5-z-1BHqeMHnJJa8vnlV3pfUv1bb92ykAwHnctOH92So68ANK6U7Bx3_LyzLnJsIn8-wm3tbcirAg0c8kWyKLc_bRBH17rEmEdhtDkex7Hm5iW1it-T5zoxyttxRRSKg1TTQAaaF5PT5EqrLRyKG10U-TyKFpDck_CxNupc3xCdafflym7epCdFnC8AcbxJlGag-zEHu_qKa7zr6XtWkU9UpcWRQ"
+    },
+    "requestContext": {},
+    "rawQueryString": "",
+    "body": "{\"operationName\": null, \"variables\": null, \"query\": \"{ hello }\"}"
+  }

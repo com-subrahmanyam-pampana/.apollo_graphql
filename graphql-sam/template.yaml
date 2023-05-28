@@ -1,0 +1,70 @@
+# This is the SAM template that represents the architecture of your serverless application
+# https://docs.aws.amazon.com/serverless-application-model/latest/developerguide/serverless-sam-template-basics.html
+
+# The AWSTemplateFormatVersion identifies the capabilities of the template
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/format-version-structure.html
+AWSTemplateFormatVersion: '2010-09-09'
+Description: >-
+  graphql-sam
+
+# Transform section specifies one or more macros that AWS CloudFormation uses to process your template
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/transform-section-structure.html
+Transform:
+- AWS::Serverless-2016-10-31
+
+# Resources declares the AWS resources that you want to include in the stack
+# https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/resources-section-structure.html
+Resources:
+  # Each Lambda function is defined by properties:
+  # https://github.com/awslabs/serverless-application-model/blob/master/versions/2016-10-31.md#awsserverlessfunction
+
+  # This is a Lambda function config associated with the source code: get-all-items.js
+  graphQLSAMfunc:
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: src/app.handler
+      Runtime: nodejs16.x
+      Architectures:
+        - x86_64
+      MemorySize: 1024
+      Timeout: 100
+      Description: A simple example includes a HTTP get method to get all items from a DynamoDB table.
+      Events:
+        MyApi:
+          Type: Api
+          Properties:
+            Path: /graphql
+            Method: ANY
+
+  # OptionsMethod:
+  #  Type: AWS::ApiGateway::Method
+  #  Properties:
+  #   AuthorizationType: NONE
+  #   RestApiId:
+  #     Ref: MyApi
+  #   ResourceId:
+  #     Ref: MyResourceOnWhichToEnableCORS
+  #   HttpMethod: OPTIONS
+  #   Integration:
+  #     IntegrationResponses:
+  #     - StatusCode: 200
+  #       ResponseParameters:
+  #         method.response.header.Access-Control-Allow-Headers: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+  #         method.response.header.Access-Control-Allow-Methods: "'POST,OPTIONS'"
+  #         method.response.header.Access-Control-Allow-Origin: "'*'"
+  #       ResponseTemplates:
+  #         application/json: ''
+  #     PassthroughBehavior: WHEN_NO_MATCH
+  #     RequestTemplates:
+  #       application/json: '{"statusCode": 200}'
+  #     Type: MOCK
+  #   MethodResponses:
+  #   - StatusCode: 200
+  #     ResponseModels:
+  #       application/json: 'Empty'
+  #     ResponseParameters:
+  #         method.response.header.Access-Control-Allow-Headers: false
+  #         method.response.header.Access-Control-Allow-Methods: false
+  #         method.response.header.Access-Control-Allow-Origin: false        
+  
+  
